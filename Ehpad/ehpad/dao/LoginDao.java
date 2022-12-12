@@ -18,7 +18,7 @@ public class LoginDao {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			System.out.println("Driver chargé");
-			con = DriverManager.getConnection("jdbc:mysql://localhost/ehpad?serverTimezone=UTC", "root", "");
+			con = DriverManager.getConnection("jdbc:mysql://localhost/ehpad?serverTimezone=UTC", "ehpad_user", "ehpad_pwd");
 			System.out.println("Connexion établie");
 			Connected = true;
 		} catch (Exception e) {
