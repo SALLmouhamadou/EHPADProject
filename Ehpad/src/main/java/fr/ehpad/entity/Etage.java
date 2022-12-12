@@ -1,4 +1,4 @@
-package entity;
+package fr.ehpad.entity;
 
 public class Etage {
 	private Integer id_etage;

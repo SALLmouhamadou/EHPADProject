@@ -4,6 +4,8 @@
  */
 package fr.ehpad.entity;
 
+import java.sql.Date;
+
 /**
  *
  * @author SALL Mouhamadou
@@ -11,8 +13,22 @@ package fr.ehpad.entity;
 public class Personne {
     private int idPersonne;
 	private String nom, prenom, email, passsword, telephone;
+	private Date dateNaissance, dateArrivee, dateDepart;
 	
 	public Personne() {
+	}
+	
+	public Personne(Integer id_personne, String nom, String prenom, String email, String telephone, Date date_naissance,
+			Date date_arrivee, Date date_depart) {
+		super();
+		this.idPersonne = id_personne;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.telephone = telephone;
+		this.dateNaissance = date_naissance;
+		this.dateArrivee = date_arrivee;
+		this.dateDepart = date_depart;
 	}
 
 	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone) {
@@ -78,4 +94,30 @@ public class Personne {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
+
+	public Date getDateNaissance() {
+		return dateNaissance;
+	}
+
+	public void setDateNaissance(Date dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
+	public Date getDateArrivee() {
+		return dateArrivee;
+	}
+
+	public void setDateArrivee(Date dateArrivee) {
+		this.dateArrivee = dateArrivee;
+	}
+
+	public Date getDateDepart() {
+		return dateDepart;
+	}
+
+	public void setDateDepart(Date dateDepart) {
+		this.dateDepart = dateDepart;
+	}
+	
+	
 }

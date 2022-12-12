@@ -1,4 +1,4 @@
-package entity;
+package fr.ehpad.entity;
 
 public class Medicament {
 	private String nom, fonction;

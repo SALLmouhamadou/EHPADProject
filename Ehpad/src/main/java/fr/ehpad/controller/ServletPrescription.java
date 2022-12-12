@@ -1,4 +1,4 @@
-package controller;
+package fr.ehpad.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
