@@ -23,6 +23,13 @@ public class Personne {
 		this.passsword = passsword;
 		this.telephone = telephone;
 	}
+        public Personne(String nom, String prenom, String email, String passsword, String telephone) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.passsword = passsword;
+		this.telephone = telephone;
+	}
 
 	public int getIdPersonne() {
 		return idPersonne;
