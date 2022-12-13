@@ -17,14 +17,14 @@ BEGIN
 		SHOW ERRORS;
 	END;  
 	START TRANSACTION;
-		INSERT INTO personne(id_personne, nom, prenom, date_naissance, date_arrivee, email, telephone) VALUES 
-		(1, 'HADDOCK', 'Archibald', '1920-06-01', CURDATE(), 'archibald.haddock@lemans.fr', '+33659847264'),
-		(2, 'ISTIS', 'Larme', '1918-11-11', CURDATE(), 'larme.istis@pastis.fr', '+33688888888'),
-		(3, 'TERIEUR', 'Alex', '1932-12-24', CURDATE(), 'papa.noel@pole-nord.com', '+3966598482530'),
-		(4, 'TERIEUR', 'Alain', '1938-02-14', CURDATE(), 'cupidon@love.com', '+33662984715'),
-		(5, 'CURRY', 'Marie', '1960-09-21', CURDATE(), 'marieeaucurry@infirmiere.fr', '+33666666666'),
-		(6, 'BRETON', 'Anna', '1991-11-11', CURDATE(), 'bretagnelibre@insoumis.fr', '+33699999999'),
-		(7, 'BEBOU', 'Amelie', '1975-05-05', CURDATE(), 'bebou@docteur.fr', '+33611111111');
+		INSERT INTO personne(id_personne, nom, prenom, date_naissance, date_arrivee, email, telephone, pwd) VALUES 
+    (1, 'HADDOCK', 'Archibald', '1920-06-01', CURDATE(), 'archibald.haddock@lemans.fr', '+33659847264', 'password'),
+	(2, 'ISTIS', 'Larme', '1918-11-11', CURDATE(), 'larme.istis@pastis.fr', '+33688888888', 'password'),
+    (3, 'TERIEUR', 'Alex', '1932-12-24', CURDATE(), 'papa.noel@pole-nord.com', '+3966598482530', 'password'),
+    (4, 'TERIEUR', 'Alain', '1938-02-14', CURDATE(), 'cupidon@love.com', '+33662984715', 'password'),
+    (5, 'CURRY', 'Marie', '1960-09-21', CURDATE(), 'marieeaucurry@infirmiere.fr', '+33666666666', 'password'),
+    (6, 'BRETON', 'Anna', '1991-11-11', CURDATE(), 'bretagnelibre@insoumis.fr', '+33699999999', 'password'),
+    (7, 'BEBOU', 'Amelie', '1975-05-05', CURDATE(), 'bebou@docteur.fr', '+33611111111', 'password');
 
 		INSERT INTO etage(etage_securise)
 		VALUES (false),
@@ -36,10 +36,8 @@ BEGIN
 		VALUES (201, false, 2),
 		(202, false, 2),
 		(203, false, 2),
-		(204, false, 2);
-
-		INSERT INTO chambre(no_chambre, chambre_double, id_etage)
-		VALUES (301, false, 3),
+		(204, false, 2),
+		(301, false, 3),
 		(302, true, 3),
 		(303, true, 3),
 		(304, false, 3),
@@ -63,25 +61,25 @@ BEGIN
 		INSERT INTO employe(no_secu, id_fonction, id_personne)
 		VALUES (160099135923888, 1, 5);
 
-		INSERT INTO infirmiere(no_RPPS, id_employe)
-		VALUES (12345678901, 1);
+		INSERT INTO infirmiere(no_RPPS, id_personne)
+		VALUES (12345678901, 5);
 
 		INSERT INTO medicament(nom, fonction, stock)
 		VALUES ("Doliprane", 'antalgique', 50),
 		("Aspegic", 'antalgique', 80),
 		("céphalexine", 'antibiotique', 5);
 
-		INSERT INTO medecin(id_personne)
-		VALUES (7);
+		INSERT INTO medecin(no_rpps, id_personne)
+		VALUES (98765432109, 7);
 
-		INSERT INTO ordonnance(id_medecin, id_pensionnaire, jour)
-		VALUES (1,3, CURDATE());
+		INSERT INTO ordonnance(id_personne, no_rpps, jour)
+		VALUES (1,98765432109, CURDATE());
 
-		INSERT INTO prescription(id_medicament, id_medecin, id_pensionnaire, jour, posologie, date_debut_traitement, date_fin_traitement)
-		VALUES (1, 1,3, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
+		INSERT INTO prescription(id_medicament, no_rpps, id_personne, jour, posologie, date_debut_traitement, date_fin_traitement)
+		VALUES (1, 98765432109, 3, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
 
-		INSERT INTO doit_administrer(id_medecin, id_pensionnaire, jour, no_RPPS)
-		VALUES (1, 3, CURDATE(), 12345678901);
+		INSERT INTO doit_administrer(no_rpps, no_rpps_1, jour, no_RPPS)
+		VALUES (98765432109, 12345678901, CURDATE(), 12345678901);
 
 		INSERT INTO allergene(nom)
 		VALUES ("gluten"),
