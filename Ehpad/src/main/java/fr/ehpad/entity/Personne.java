@@ -37,12 +37,13 @@ public class Personne {
         this.telephone = telephone;
     }
 
-    public Personne(String nom, String prenom, String email, String password, String telephone) {
+    public Personne(String nom, String prenom, String email, String password, String telephone, LocalDate dateNaissance) {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
         this.pwd = password;
         this.telephone = telephone;
+        this.dateNaissance= dateNaissance;
     }
 
     public int getIdPersonne() {
