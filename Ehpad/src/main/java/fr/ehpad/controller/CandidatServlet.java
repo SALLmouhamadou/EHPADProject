@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author SALL Mouhamadou
  */
 @WebServlet(name = "CandidatServelt", urlPatterns = {"/candidat"})
-public class CandidatServelt extends HttpServlet {
+public class CandidatServlet extends HttpServlet {
     
     private final static String VUE="/WEB-INF/confirmation.jsp";
 
