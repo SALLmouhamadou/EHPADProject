@@ -12,14 +12,14 @@ import java.sql.SQLException;
 public class CandidatDao {
     public static void insert(Personne candidat) throws SQLException{
         Connection connexion = Database.getConnection();
-        String  sql ="INSERT INTO personne( nom, prenom, email, pwd, telephone) VALUES(?, ?, ?, ?, ?)";
+        String  sql ="INSERT INTO personne( nom, prenom,date_naissance, email, pwd, telephone) VALUES(?, ?, ?, ?, ?,?)";
         PreparedStatement stmt = connexion.prepareCall(sql);
         stmt.setString(1, candidat.getNom());
         stmt.setString(2, candidat.getPrenom());
-        stmt.setString(3, candidat.getEmail());
-        stmt.setString(4, candidat.getPwd());
-        stmt.setString(5, candidat.getTelephone());
-        stmt.setDate(8, Date.valueOf(candidat.getDateNaissance()));
+        stmt.setDate(3, Date.valueOf(candidat.getDateNaissance()));
+        stmt.setString(4, candidat.getEmail());
+        stmt.setString(5, candidat.getPwd());
+        stmt.setString(6, candidat.getTelephone());
         stmt.executeUpdate();
         connexion.close();
     }

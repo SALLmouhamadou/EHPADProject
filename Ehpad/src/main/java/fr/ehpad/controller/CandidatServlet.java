@@ -2,9 +2,16 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package ehpad.controller;
+package fr.ehpad.controller;
 
+import fr.ehpad.dao.CandidatDao;
+import fr.ehpad.entity.Personne;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,6 +36,8 @@ public class CandidatServlet extends HttpServlet {
        String prenom =request.getParameter("prenom");
        String email =request.getParameter("email");
        String date =  request.getParameter("date");
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate dateNaissance = LocalDate.parse(date, formatter);
        String confirmationEmail =request.getParameter("confirmationEmail");
        String password =request.getParameter("password");
        String confirmationPassword =request.getParameter("confirmationPassword");
@@ -64,9 +73,17 @@ public class CandidatServlet extends HttpServlet {
         }
         System.out.println(nom + " "+ prenom + " née le "+ date +" votre adresse email "+ email + "confirmation de votre email "+confirmationEmail+ " votre mots passe "+ password +" confirmation mots passe "+ confirmationPassword + " "+ telephone);
        if (isValid) {
+            try {
+                Personne candidat = new Personne(nom, prenom,dateNaissance, email, password, telephone);
+                CandidatDao.insert(candidat);
+                request.setAttribute("candidatMessage", "votre demande a bien été transmis");
               getServletContext().getRequestDispatcher(VUE).forward(request, response);
+            } catch (SQLException ex) {
+                Logger.getLogger(CandidatServlet.class.getName()).log(Level.SEVERE, null, ex);
+                request.setAttribute("candidatMessage", ex.getMessage());
             }
-       else{
+
+        } else {
            request.setAttribute("candidatMessage", "Votre inscription n'a pas été transmis");
            getServletContext().getRequestDispatcher("/WEB-INF/candidat.jsp").forward(request, response);
        }

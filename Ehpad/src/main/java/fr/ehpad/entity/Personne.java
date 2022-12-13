@@ -37,9 +37,10 @@ public class Personne {
         this.telephone = telephone;
     }
 
-    public Personne(String nom, String prenom, String email, String password, String telephone) {
+    public Personne(String nom, String prenom, LocalDate dateNaissance, String email, String password, String telephone) {
         this.nom = nom;
         this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
         this.email = email;
         this.pwd = password;
         this.telephone = telephone;
