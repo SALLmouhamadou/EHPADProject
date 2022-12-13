@@ -1,34 +1,42 @@
 package fr.ehpad.dao;
 
 import java.sql.Connection;
-import ehpad.database.Database;
-import ehpad.entity.Pensionnaire;
-import ehpad.entity.Prescription;
+import java.sql.Date;
 
-import java.sql.DriverManager;
+import fr.ehpad.database.Database;
+import fr.ehpad.entity.Pensionnaire;
+import fr.ehpad.entity.Prescription;
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+import java.time.LocalDate;
 
 public class PrescriptionDAO {
 
 	public Prescription getPrescriptionbyID(Integer idPensionnaire) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
-		Prescription pres = new Prescription();
 		String sql = "SELECT * FROM prescription WHERE id_pensionnaire=?;";
 		PreparedStatement state = con.prepareCall(sql);
 		state.setInt(1, idPensionnaire);
 		ResultSet res = state.executeQuery();
 		res.next();
 		while (res.next()) {
-			Prescription.set
+			Integer idMedicament = res.getInt("id_medicament");
+			String noRPPS = res.getString("no_RPPS");
+			Integer idPersonne = res.getInt("id_personne");
+			LocalDate jour = LocalDate.parse(res.getString("jour"));
+			String posologie = res.getString("posologie");
+			LocalDate dateDebutTrateiement = LocalDate.parse(res.getString("date_debut_traitement"));
+			LocalDate dateFinTraitement = LocalDate.parse(res.getString("date_fin_traitement"));
+			
+			Prescription pres = new Prescription(idMedicament, idPersonne, );
+			
 			String sql2 = "SELECT * FROM medicament WHERE id_medicament=?;";
 			String medicament = res.getString("id_medicament");
-			int medicamentInt = Integer.parseInt(medicament);
 			PreparedStatement state2 = con.prepareCall(sql2);
-			state2.setInt(1, medicamentInt);
+			state2.setInt(1, idMedicament);
 			ResultSet res2 = state2.executeQuery();
 			res2.next();
 			while (res2.next()) {
