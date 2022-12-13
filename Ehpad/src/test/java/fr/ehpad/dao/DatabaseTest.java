@@ -1,8 +1,5 @@
-package database;
-
-import fr.ehpad.dao.Database;
+package fr.ehpad.dao;
 import java.sql.Connection;
-import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

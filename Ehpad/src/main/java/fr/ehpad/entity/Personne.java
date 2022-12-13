@@ -40,6 +40,7 @@ public class Personne {
     public Personne(String nom, String prenom, String email, String password, String telephone, LocalDate dateNaissance) {
         this.nom = nom;
         this.prenom = prenom;
+        this.dateNaissance = dateNaissance;
         this.email = email;
         this.pwd = password;
         this.telephone = telephone;

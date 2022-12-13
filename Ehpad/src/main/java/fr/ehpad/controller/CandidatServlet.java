@@ -25,6 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "CandidatServelt", urlPatterns = {"/candidat"})
 public class CandidatServlet extends HttpServlet {
 
+
     private final static String VUE = "/WEB-INF/candidat.jsp";
 
     @Override
@@ -88,5 +89,4 @@ public class CandidatServlet extends HttpServlet {
         }
 
     }
-
 }
