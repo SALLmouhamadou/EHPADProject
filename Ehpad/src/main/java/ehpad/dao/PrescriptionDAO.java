@@ -36,6 +36,7 @@ public class PrescriptionDAO {
 			}
 			String posologie = res.getString("posologie");
 			System.out.println(medicament + " ID : " + posologie);
+			return null;
 		}
 
 		PreparedStatement canal2 = con.prepareStatement("select * from exemple where id= ?");
