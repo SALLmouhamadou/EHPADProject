@@ -3,103 +3,149 @@ package fr.ehpad.entity;
 import java.time.LocalDate;
 
 public class Prescription {
-	private Integer idMedicament, id_personne;
-	private LocalDate jour, date_debut_traitement, date_fin_traitement;
+	private Integer idMedicament, idPersonne;
+	private LocalDate jour, dateDebutTraitement, dateFinTraitement;
 	private String posologie, noRPPS;
 	
-	public Prescription(Integer idMedicament, Integer id_personne, LocalDate jour, LocalDate date_debut_traitement,
-			LocalDate date_fin_traitement, String posologie, String noRPPS) {
-		super();
-		this.idMedicament = idMedicament;
-		this.id_personne = id_personne;
-		this.jour = jour;
-		this.date_debut_traitement = date_debut_traitement;
-		this.date_fin_traitement = date_fin_traitement;
-		this.posologie = posologie;
-		this.noRPPS = noRPPS;
-	}
+	
 	
 	public Prescription() {
 		super();
 	}
+
+
+
+	public Prescription(Integer idMedicament, Integer idPersonne, LocalDate jour, LocalDate dateDebutTraitement,
+			LocalDate dateFinTraitement, String posologie, String noRPPS) {
+		super();
+		this.idMedicament = idMedicament;
+		this.idPersonne = idPersonne;
+		this.jour = jour;
+		this.dateDebutTraitement = dateDebutTraitement;
+		this.dateFinTraitement = dateFinTraitement;
+		this.posologie = posologie;
+		this.noRPPS = noRPPS;
+	}
+
+
+
 	/**
 	 * @return the idMedicament
 	 */
 	public Integer getIdMedicament() {
 		return idMedicament;
 	}
+
+
+
 	/**
-	 * @return the id_personne
+	 * @return the idPersonne
 	 */
-	public Integer getId_personne() {
-		return id_personne;
+	public Integer getIdPersonne() {
+		return idPersonne;
 	}
+
+
+
 	/**
 	 * @return the jour
 	 */
 	public LocalDate getJour() {
 		return jour;
 	}
+
+
+
 	/**
-	 * @return the date_debut_traitement
+	 * @return the dateDebutTraitement
 	 */
-	public LocalDate getDate_debut_traitement() {
-		return date_debut_traitement;
+	public LocalDate getDateDebutTraitement() {
+		return dateDebutTraitement;
 	}
+
+
+
 	/**
-	 * @return the date_fin_traitement
+	 * @return the dateFinTraitement
 	 */
-	public LocalDate getDate_fin_traitement() {
-		return date_fin_traitement;
+	public LocalDate getDateFinTraitement() {
+		return dateFinTraitement;
 	}
+
+
+
 	/**
 	 * @return the posologie
 	 */
 	public String getPosologie() {
 		return posologie;
 	}
+
+
+
 	/**
 	 * @return the noRPPS
 	 */
 	public String getNoRPPS() {
 		return noRPPS;
 	}
+
+
+
 	/**
 	 * @param idMedicament the idMedicament to set
 	 */
 	public void setIdMedicament(Integer idMedicament) {
 		this.idMedicament = idMedicament;
 	}
+
+
+
 	/**
-	 * @param id_personne the id_personne to set
+	 * @param idPersonne the idPersonne to set
 	 */
-	public void setId_personne(Integer id_personne) {
-		this.id_personne = id_personne;
+	public void setIdPersonne(Integer idPersonne) {
+		this.idPersonne = idPersonne;
 	}
+
+
+
 	/**
 	 * @param jour the jour to set
 	 */
 	public void setJour(LocalDate jour) {
 		this.jour = jour;
 	}
+
+
+
 	/**
-	 * @param date_debut_traitement the date_debut_traitement to set
+	 * @param dateDebutTraitement the dateDebutTraitement to set
 	 */
-	public void setDate_debut_traitement(LocalDate date_debut_traitement) {
-		this.date_debut_traitement = date_debut_traitement;
+	public void setDateDebutTraitement(LocalDate dateDebutTraitement) {
+		this.dateDebutTraitement = dateDebutTraitement;
 	}
+
+
+
 	/**
-	 * @param date_fin_traitement the date_fin_traitement to set
+	 * @param dateFinTraitement the dateFinTraitement to set
 	 */
-	public void setDate_fin_traitement(LocalDate date_fin_traitement) {
-		this.date_fin_traitement = date_fin_traitement;
+	public void setDateFinTraitement(LocalDate dateFinTraitement) {
+		this.dateFinTraitement = dateFinTraitement;
 	}
+
+
+
 	/**
 	 * @param posologie the posologie to set
 	 */
 	public void setPosologie(String posologie) {
 		this.posologie = posologie;
 	}
+
+
+
 	/**
 	 * @param noRPPS the noRPPS to set
 	 */

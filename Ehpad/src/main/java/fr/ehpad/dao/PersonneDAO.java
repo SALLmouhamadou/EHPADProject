@@ -3,7 +3,6 @@ package fr.ehpad.dao;
 import java.sql.Connection;
 
 import ehpad.entity.Pensionnaire;
-import fr.ehpad.database.Database;
 
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

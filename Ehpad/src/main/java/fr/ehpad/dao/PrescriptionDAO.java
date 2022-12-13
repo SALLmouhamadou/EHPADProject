@@ -3,7 +3,6 @@ package fr.ehpad.dao;
 import java.sql.Connection;
 import java.sql.Date;
 
-import fr.ehpad.database.Database;
 import fr.ehpad.entity.Pensionnaire;
 import fr.ehpad.entity.Prescription;
 
@@ -28,10 +27,10 @@ public class PrescriptionDAO {
 			Integer idPersonne = res.getInt("id_personne");
 			LocalDate jour = LocalDate.parse(res.getString("jour"));
 			String posologie = res.getString("posologie");
-			LocalDate dateDebutTrateiement = LocalDate.parse(res.getString("date_debut_traitement"));
+			LocalDate dateDebutTraitement = LocalDate.parse(res.getString("date_debut_traitement"));
 			LocalDate dateFinTraitement = LocalDate.parse(res.getString("date_fin_traitement"));
 			
-			Prescription pres = new Prescription(idMedicament, idPersonne, );
+			Prescription pres = new Prescription(idMedicament, idPersonne, jour, dateDebutTraitement, dateFinTraitement, posologie, noRPPS);
 			
 			String sql2 = "SELECT * FROM medicament WHERE id_medicament=?;";
 			String medicament = res.getString("id_medicament");
@@ -45,7 +44,6 @@ public class PrescriptionDAO {
 				String stock = res2.getString("stock");
 				System.out.println(medicNom + " " + medicFonction + " " + stock);
 			}
-			String posologie = res.getString("posologie");
 			System.out.println(medicament + " ID : " + posologie);
 			return null;
 		}
