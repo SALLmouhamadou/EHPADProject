@@ -32,14 +32,15 @@ CREATE TABLE personne(
    Id_personne INT AUTO_INCREMENT,
    nom VARCHAR(50)  NOT NULL,
    prenom VARCHAR(50)  NOT NULL,
+   telephone VARCHAR(15)  NOT NULL,
+   email VARCHAR(70)  NOT NULL,
+   password VARCHAR(64)  NOT NULL,
    date_naissance DATE,
    date_arrivee DATE NOT NULL,
    date_depart DATE,
-   email VARCHAR(70)  NOT NULL,
-   telephone VARCHAR(15)  NOT NULL,
    PRIMARY KEY(Id_personne),
-   UNIQUE(email),
-   UNIQUE(telephone)
+   UNIQUE(telephone),
+   UNIQUE(email)
 )ENGINE INNODB;
 
 CREATE TABLE statut_candidature(
@@ -64,7 +65,7 @@ CREATE TABLE chambre(
 
 CREATE TABLE employe(
    Id_employe INT AUTO_INCREMENT,
-   no_secu BIGINT NOT NULL,
+   no_secu VARCHAR(15)  NOT NULL,
    Id_fonction INT NOT NULL,
    Id_personne INT NOT NULL,
    PRIMARY KEY(Id_employe),
@@ -99,7 +100,7 @@ CREATE TABLE medecin(
 
 CREATE TABLE pensionnaire(
    Id_pensionnaire INT AUTO_INCREMENT,
-   no_secu BIGINT NOT NULL,
+   no_secu VARCHAR(15)  NOT NULL,
    Id_chambre INT NOT NULL,
    Id_personne INT NOT NULL,
    PRIMARY KEY(Id_pensionnaire),
@@ -194,6 +195,7 @@ CREATE TABLE doit_administrer(
    FOREIGN KEY(no_RPPS) REFERENCES infirmiere(no_RPPS),
    FOREIGN KEY(Id_medecin, Id_pensionnaire, jour) REFERENCES ordonnance(Id_medecin, Id_pensionnaire, jour)
 )ENGINE INNODB;
+
 
 
 -- DEBUT DES VALEURS DE TEST

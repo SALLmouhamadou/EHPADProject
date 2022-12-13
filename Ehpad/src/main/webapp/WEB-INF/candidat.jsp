@@ -42,7 +42,7 @@
             </div>
             <div>
                 <label for="confirmationPassword"> Confirmez votre mot de passe </label><br>
-                <input type="text" name="confirmationPassword" placeholder="Entrez votre confirmation mots de passe" required>
+                <input type="text" name="confirmationPassword" placeholder="Entrez votre confirmation de mot de passe" required>
                 ${confirmationPasswordMessage}
             </div>
             <div>
