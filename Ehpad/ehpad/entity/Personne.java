@@ -1,39 +1,42 @@
-package entity;
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package fr.ehpad.entity;
 
-import java.sql.Date;
-
+/**
+ *
+ * @author SALL Mouhamadou
+ */
 public class Personne {
-	private Integer id_personne;
-	private String nom, prenom, email, telephone;
-	private Date date_naissance, date_arrivee, date_depart;
+    private int idPersonne;
+	private String nom, prenom, email, passsword, telephone;
 	
-	public Personne(Integer id_personne, String nom, String prenom, String email, String telephone, Date date_naissance,
-			Date date_arrivee, Date date_depart) {
-		super();
-		this.id_personne = id_personne;
+	public Personne() {
+	}
+
+	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone) {
+		this.idPersonne = idPersonne;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
+		this.passsword = passsword;
 		this.telephone = telephone;
-		this.date_naissance = date_naissance;
-		this.date_arrivee = date_arrivee;
-		this.date_depart = date_depart;
 	}
-	
-	
-
-	public Personne() {
-		super();
+        public Personne(String nom, String prenom, String email, String passsword, String telephone) {
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.passsword = passsword;
+		this.telephone = telephone;
 	}
 
-
-
-	public Integer getId_personne() {
-		return id_personne;
+	public int getIdPersonne() {
+		return idPersonne;
 	}
 
-	public void setId_personne(Integer id_personne) {
-		this.id_personne = id_personne;
+	public void setIdPersonne(int idPersonne) {
+		this.idPersonne = idPersonne;
 	}
 
 	public String getNom() {
@@ -60,6 +63,14 @@ public class Personne {
 		this.email = email;
 	}
 
+	public String getPasssword() {
+		return passsword;
+	}
+
+	public void setPasssword(String passsword) {
+		this.passsword = passsword;
+	}
+
 	public String getTelephone() {
 		return telephone;
 	}
@@ -67,30 +78,4 @@ public class Personne {
 	public void setTelephone(String telephone) {
 		this.telephone = telephone;
 	}
-
-	public Date getDate_naissance() {
-		return date_naissance;
-	}
-
-	public void setDate_naissance(Date date_naissance) {
-		this.date_naissance = date_naissance;
-	}
-
-	public Date getDate_arrivee() {
-		return date_arrivee;
-	}
-
-	public void setDate_arrivee(Date date_arrivee) {
-		this.date_arrivee = date_arrivee;
-	}
-
-	public Date getDate_depart() {
-		return date_depart;
-	}
-
-	public void setDate_depart(Date date_depart) {
-		this.date_depart = date_depart;
-	}
-	
-	
 }
