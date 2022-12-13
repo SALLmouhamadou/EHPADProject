@@ -9,7 +9,7 @@ import java.sql.SQLException;
  *
  * @author SALL Mouhamadou
  */
-public class CandidatsDao {
+public class CandidatDao {
     public static void insert(Personne candidat) throws SQLException{
         Connection connexion = Database.getConnection();
         String  sql ="INSERT INTO personne( nom, prenom, email, pwd, telephone) VALUES(?, ?, ?, ?, ?)";
