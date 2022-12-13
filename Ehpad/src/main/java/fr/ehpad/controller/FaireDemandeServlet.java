@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author SALL Mouhamadou
  */
 @WebServlet(name = "FaireDemandeServelt", urlPatterns = {"/faireSaDemande"})
-public class FaireDemandeServelt extends HttpServlet {
+public class FaireDemandeServlet extends HttpServlet {
 
     private final static String VUE = "/WEB-INF/candidat.jsp";
     
