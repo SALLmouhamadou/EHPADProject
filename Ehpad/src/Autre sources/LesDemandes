@@ -1,0 +1,14 @@
+@startuml
+participant Navigateur
+participant Vue
+
+Navigateur -> Controleur: GET /demadeEnCours?idAdmin=...
+Controleur -> Controleur: idAdmin entier ?
+Controleur -> DAO: CandidatDao.\ngetDemandeByIdAdmin(idAdmin)
+DAO -> SGBD: SELECT ...
+SGBD --> DAO: ligne ou échec
+DAO --> Controleur: List<Mesdemandes> ou SQLException
+Controleur -> Vue: Demande.jsp
+Vue -> Navigateur: page avec les demandes en cours
+
+@enduml

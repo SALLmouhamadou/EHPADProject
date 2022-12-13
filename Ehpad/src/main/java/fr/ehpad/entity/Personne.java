@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package fr.ehpad.entity;
 
 /**
@@ -9,73 +5,75 @@ package fr.ehpad.entity;
  * @author SALL Mouhamadou
  */
 public class Personne {
+
     private int idPersonne;
-	private String nom, prenom, email, passsword, telephone;
-	
-	public Personne() {
-	}
+    private String nom, prenom, email, password, telephone;
 
-	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone) {
-		this.idPersonne = idPersonne;
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.passsword = passsword;
-		this.telephone = telephone;
-	}
-        public Personne(String nom, String prenom, String email, String passsword, String telephone) {
-		this.nom = nom;
-		this.prenom = prenom;
-		this.email = email;
-		this.passsword = passsword;
-		this.telephone = telephone;
-	}
+    public Personne() {
+    }
 
-	public int getIdPersonne() {
-		return idPersonne;
-	}
+    public Personne(int idPersonne, String nom, String prenom, String email, String password, String telephone) {
+        this.idPersonne = idPersonne;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.telephone = telephone;
+    }
 
-	public void setIdPersonne(int idPersonne) {
-		this.idPersonne = idPersonne;
-	}
+    public Personne(String nom, String prenom, String email, String password, String telephone) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.password = password;
+        this.telephone = telephone;
+    }
 
-	public String getNom() {
-		return nom;
-	}
+    public int getIdPersonne() {
+        return idPersonne;
+    }
 
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
+    public void setIdPersonne(int idPersonne) {
+        this.idPersonne = idPersonne;
+    }
 
-	public String getPrenom() {
-		return prenom;
-	}
+    public String getNom() {
+        return nom;
+    }
 
-	public void setPrenom(String prenom) {
-		this.prenom = prenom;
-	}
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getPrenom() {
+        return prenom;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
 
-	public String getPasssword() {
-		return passsword;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setPasssword(String passsword) {
-		this.passsword = passsword;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getTelephone() {
-		return telephone;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setTelephone(String telephone) {
-		this.telephone = telephone;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getTelephone() {
+        return telephone;
+    }
+
+    public void setTelephone(String telephone) {
+        this.telephone = telephone;
+    }
 }

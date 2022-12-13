@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding:0;
+    text-decoration: none;
+    list-style: none;
+}
+nav{
+    background-color: green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav>h1>a{
+    color: aliceblue;
+    margin-top: 0px;
+    margin-left :20px; 
+}
+ul{
+    display:flex;
+
+}
+li{
+    margin-top:0px;
+    margin:20px;
+    border-bottom: 3px solid white;
+}
+li>a{
+    color: aliceblue;
+}
+header{
+    background-image: url("image/fond-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+    display: flex;
+    justify-content: space-between;
+   
+}
+header>h3{
+    margin-top: 400px;
+    margin-left:50px;
+    color: rgb(33, 177, 47);
+}
+button{
+    margin-top: 450px;
+    margin-right: 70px;
+    padding: 10px;
+    background-color:chartreuse;
+    color:aliceblue;
+    border:none;
+}

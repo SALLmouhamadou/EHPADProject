@@ -1,0 +1,8 @@
+@startuml
+participant Navigateur
+participant Vue
+
+Navigateur -> Controleur : Btn Faire sa demande Get/FaireSaDemande
+Controleur -> Vue : candidat.jsp
+Vue -> Navigateur : Géner la page Html
+@enduml

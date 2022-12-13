@@ -1,0 +1,28 @@
+@startuml
+participant Navigateur
+participant Vue
+
+== Soumettre ses données de sa demande ==
+Navigateur -> Controleur : Post/candidat\n+avecnom, prenom, email,confirmationEmail\n+ password,confirmePassword, DateNaissance,\n+ DateDemande, CodePostale, Ville, commentaires
+Controleur -> Controleur : idCandidat entier?
+Controleur -> Dao : CandidatDao.insert(demande)
+Dao -> SGBD  : Insert into candidat (.....)
+SGBD -> Dao  : Si InsertOk (bien passer) sinon (un probleme pb)
+DAO --> Controleur: ok ou SQLException
+== si souci (email différent par ex) ==
+Controleur -> Vue: candidat.jsp
+Vue -> Navigateur: formulaire avec erreurs
+== confirmation de mail ==
+Controleur --> Vue: confirmation.jsp
+Vue -> Navigateur: MESSAGE \nvous venez\nde recevoir un mail \nde confirmation
+
+== Clique sur le bouton confirmation==
+Navigateur  -> Controleur : Post/confirmation/
+Controleur -> Controleur : idCnadidat entier ?
+Controleur -> Dao: CandidatDao.\ngetDemandeByIdCandidat(idCandidat)
+Dao-> SGBD: SELECT ...
+SGBD --> Dao: ligne ou échec
+Dao --> Controleur: List<Mesdemandes> ou SQLException
+Controleur -> Vue: Demande.jsp
+Vue -> Navigateur: page avec les demandes en cours
+@enduml

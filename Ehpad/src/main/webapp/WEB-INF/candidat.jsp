@@ -14,22 +14,22 @@
             <div>
                 <label for="nom"> Nom </label><br>
                 <input type="text" name="nom" placeholder="Entrez votre nom" required>
-                ${nomMessage}
+                <p>${nomMessage}</p>
             </div>
             <div>
                 <label for="prenom"> Prénom </label><br>
                 <input type="text" name="prenom" placeholder="Entrez votre prennom" required>
-                ${prenomMessage}
+                <p>${prenomMessage}</p>
             </div>
             <div>
                 <label for="email"> Email </label><br>
                 <input type="text" name="email" placeholder="Entrez votre email" required>
-                ${emailMessage}
+                <p>${emailMessage}</p>
             </div>
             <div>
                 <label for="confirmationEmail"> Confirmez votre email </label><br>
                 <input type="text" name="confirmationEmail" placeholder="confirmation votre email" required>
-                ${confirmationEmailMessage}
+                <p>${confirmationEmailMessage}</p>
             </div>
             <div>
                 <label for="date"> Date de naissance </label><br>
@@ -39,18 +39,23 @@
             <div>
                 <label for="password"> Mots de passe </label><br>
                 <input type="text" name="password" placeholder="Entrez votre mots de passe" required>
-                ${passwordMessage}
+                <p${passwordMessage}></p>
             </div>
             <div>
                 <label for="confirmationPassword"> Confirmez votre mots de passe </label><br>
                 <input type="text" name="confirmationPassword" placeholder="Entrez votre confirmation mots de passe" required>
-                ${confirmationPasswordMessage}
+                <p>${confirmationPasswordMessage}</p>
             </div>
             <div>
                 <label for="telephone"> n° Téléphone </label><br>
                 <input type="text" name="telephone" placeholder="Entrez votre tel :+33 06 20 20 20" required>
-                ${telephoneMessage}
+                <p>${telephoneMessage}</p>
             </div>
+            <div>
+                <label for="commentaire"> commentaire </label><br>
+                <input type="text" name="commentaire" placeholder="Veuillez écrire ici votre message">
+            </div>
+            
             <div>
                 <input type="Submit" value="Valider">
                 <input type="reset"  value="Reset">
