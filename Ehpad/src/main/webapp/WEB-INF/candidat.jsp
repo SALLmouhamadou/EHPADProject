@@ -46,7 +46,7 @@
                 <p>${confirmationPasswordMessage}</p>
             </div>
             <div>
-                <label for="telephone"> n° Téléphone </label><br>
+                <label for="telephone"> Numéro de téléphone </label><br>
                 <input type="text" name="telephone" placeholder="Entrez votre tel :+33 06 20 20 20" required>
                 <p>${telephoneMessage}</p>
             </div>

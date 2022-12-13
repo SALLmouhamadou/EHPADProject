@@ -1,9 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
- */
 package database;
 
+import fr.ehpad.dao.Database;
 import java.sql.Connection;
 import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
