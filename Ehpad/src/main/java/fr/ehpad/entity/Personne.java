@@ -5,6 +5,7 @@
 package fr.ehpad.entity;
 
 import java.sql.Date;
+import java.time.LocalDate;
 
 /**
  *
@@ -13,22 +14,23 @@ import java.sql.Date;
 public class Personne {
     private int idPersonne;
 	private String nom, prenom, email, passsword, telephone;
-	private Date dateNaissance, dateArrivee, dateDepart;
+	private LocalDate dateNaissance, dateArrivee, dateDepart;
 	
 	public Personne() {
 	}
-	
-	public Personne(Integer id_personne, String nom, String prenom, String email, String telephone, Date date_naissance,
-			Date date_arrivee, Date date_depart) {
+
+	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone,
+			LocalDate dateNaissance, LocalDate dateArrivee, LocalDate dateDepart) {
 		super();
-		this.idPersonne = id_personne;
+		this.idPersonne = idPersonne;
 		this.nom = nom;
 		this.prenom = prenom;
 		this.email = email;
+		this.passsword = passsword;
 		this.telephone = telephone;
-		this.dateNaissance = date_naissance;
-		this.dateArrivee = date_arrivee;
-		this.dateDepart = date_depart;
+		this.dateNaissance = dateNaissance;
+		this.dateArrivee = dateArrivee;
+		this.dateDepart = dateDepart;
 	}
 
 	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone) {

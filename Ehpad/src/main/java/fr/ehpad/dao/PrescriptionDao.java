@@ -1,9 +1,7 @@
 package fr.ehpad.dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 
-import fr.ehpad.entity.Pensionnaire;
 import fr.ehpad.entity.Prescription;
 
 import java.sql.PreparedStatement;
@@ -11,9 +9,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class PrescriptionDAO {
+public class PrescriptionDao {
 
-	public Prescription getPrescriptionbyID(Integer idPensionnaire) throws SQLException {
+	public static Prescription getPrescriptionbyID(Integer idPensionnaire) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM prescription WHERE id_pensionnaire=?;";
@@ -22,7 +20,7 @@ public class PrescriptionDAO {
 		ResultSet res = state.executeQuery();
 		res.next();
 		Integer idMedicament = res.getInt("id_medicament");
-		String noRPPS = res.getString("no_RPPS");
+		String noRPPS = res.getString("no_rpps");
 		Integer idPersonne = res.getInt("id_personne");
 		LocalDate jour = LocalDate.parse(res.getString("jour"));
 		String posologie = res.getString("posologie");

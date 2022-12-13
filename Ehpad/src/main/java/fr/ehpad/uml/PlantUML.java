@@ -9,7 +9,7 @@ public class PlantUML {
 	 * 
 	 *           Navigateur -> Controleur: GET /prescriptions/\n?no_patient
 	 *           Controleur -> Controleur: idPatient complet ?
-	 *           Controleur -> Dao: PrescriptionDAO.getPrescriptions(noPatient)
+	 *           Controleur -> Dao: PrescriptionDao.getPrescriptions(noPatient)
 	 *           Dao -> SGBD: SELECT ...
 	 *           SGBD --> Dao: lignes
 	 *           Dao --> Controleur: List<Prescription>
