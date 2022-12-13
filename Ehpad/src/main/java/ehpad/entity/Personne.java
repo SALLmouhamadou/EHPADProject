@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package fr.ehpad.entity;
+package ehpad.entity;
 
 /**
  *
@@ -13,6 +13,12 @@ public class Personne {
 	private String nom, prenom, email, passsword, telephone;
 	
 	public Personne() {
+		
+	}
+	
+	public Personne(int idPersonne) {
+		super();
+		this.idPersonne = idPersonne;
 	}
 
 	public Personne(int idPersonne, String nom, String prenom, String email, String passsword, String telephone) {

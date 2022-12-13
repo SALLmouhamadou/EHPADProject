@@ -1,4 +1,4 @@
-package entity;
+package ehpad.entity;
 
 public class Fonction {
 	private Integer id_fonction;

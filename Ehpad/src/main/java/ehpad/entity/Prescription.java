@@ -1,4 +1,4 @@
-package entity;
+package ehpad.entity;
 
 import java.sql.Date;
 
