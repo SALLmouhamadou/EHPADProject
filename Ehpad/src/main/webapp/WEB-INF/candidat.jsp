@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@taglib prefix="p" tagdir="/WEB-INF/tags/"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,7 +7,7 @@
         <title>Candidat</title>
     </head>
     <body>
-        <h3> Veuillez remplir cette formulaire</h3>
+        <h3> Veuillez remplir ce formulaire</h3>
 
         <form action="candidat" method="post">
             <div>
@@ -37,7 +36,7 @@
             </div>
 
             <div>
-                <label for="password"> Mots de passe </label><br>
+                <label for="password"> Mot de passe </label><br>
                 <input type="text" name="password" placeholder="Entrez votre mots de passe" required>
                 <p${passwordMessage}></p>
             </div>

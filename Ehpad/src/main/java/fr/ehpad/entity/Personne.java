@@ -1,5 +1,7 @@
 package fr.ehpad.entity;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author SALL Mouhamadou
@@ -7,9 +9,23 @@ package fr.ehpad.entity;
 public class Personne {
 
     private int idPersonne;
-    private String nom, prenom, email, password, telephone;
+    private String nom, prenom, email, pwd, telephone;
+    private LocalDate dateNaissance, dateArrivee, dateDepart;
 
     public Personne() {
+    }
+
+    public Personne(int idPersonne, String nom, String prenom, String email, String telephone, LocalDate dateNaissance,
+            LocalDate dateArrivee, LocalDate dateDepart) {
+        super();
+        this.idPersonne = idPersonne;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+        this.telephone = telephone;
+        this.dateNaissance = dateNaissance;
+        this.dateArrivee = dateArrivee;
+        this.dateDepart = dateDepart;
     }
 
     public Personne(int idPersonne, String nom, String prenom, String email, String password, String telephone) {
@@ -17,7 +33,7 @@ public class Personne {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.password = password;
+        this.pwd = password;
         this.telephone = telephone;
     }
 
@@ -25,7 +41,7 @@ public class Personne {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
-        this.password = password;
+        this.pwd = password;
         this.telephone = telephone;
     }
 
@@ -61,12 +77,12 @@ public class Personne {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public String getTelephone() {
@@ -75,5 +91,29 @@ public class Personne {
 
     public void setTelephone(String telephone) {
         this.telephone = telephone;
+    }
+
+    public LocalDate getDateNaissance() {
+        return dateNaissance;
+    }
+
+    public void setDateNaissance(LocalDate dateNaissance) {
+        this.dateNaissance = dateNaissance;
+    }
+
+    public LocalDate getDateArrivee() {
+        return dateArrivee;
+    }
+
+    public void setDateArrivee(LocalDate dateArrivee) {
+        this.dateArrivee = dateArrivee;
+    }
+
+    public LocalDate getDateDepart() {
+        return dateDepart;
+    }
+
+    public void setDateDepart(LocalDate dateDepart) {
+        this.dateDepart = dateDepart;
     }
 }
