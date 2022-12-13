@@ -1,7 +1,7 @@
 DELIMITER $$
-DROP PROCEDURE IF EXISTS ehpad_reset $$
 
-CREATE DEFINER=`ehpad_user`@`localhost` PROCEDURE ehpad_reset()
+DROP PROCEDURE IF EXISTS reset_data;
+CREATE DEFINER=`ehpad_user`@`localhost` PROCEDURE reset_data()
 BEGIN
 	CALL truncate_all_tables();
 	-- Réasactiver contraintes de clé étrangère
@@ -61,7 +61,7 @@ BEGIN
 		INSERT INTO employe(no_secu, id_fonction, id_personne)
 		VALUES (160099135923888, 1, 5);
 
-		INSERT INTO infirmiere(no_RPPS, id_personne)
+		INSERT INTO infirmiere(no_rpps, id_personne)
 		VALUES (12345678901, 5);
 
 		INSERT INTO medicament(nom, fonction, stock)
@@ -73,13 +73,10 @@ BEGIN
 		VALUES (98765432109, 7);
 
 		INSERT INTO ordonnance(id_personne, no_rpps, jour)
-		VALUES (1,98765432109, CURDATE());
+		VALUES (1, 98765432109, CURDATE());
 
-		INSERT INTO prescription(id_medicament, no_rpps, id_personne, jour, posologie, date_debut_traitement, date_fin_traitement)
-		VALUES (1, 98765432109, 3, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
-
-		INSERT INTO doit_administrer(no_rpps, no_rpps_1, jour, no_RPPS)
-		VALUES (98765432109, 12345678901, CURDATE(), 12345678901);
+		INSERT INTO prescription(id_medicament, id_personne, no_rpps, jour, posologie, date_debut_traitement, date_fin_traitement)
+		VALUES (1, 1, 98765432109, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
 
 		INSERT INTO allergene(nom)
 		VALUES ("gluten"),
