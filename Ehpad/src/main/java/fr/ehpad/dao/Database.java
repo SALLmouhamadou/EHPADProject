@@ -1,4 +1,4 @@
-package ehpad.database;
+package fr.ehpad.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

@@ -1,14 +1,10 @@
-package ehpad.dao;
-
+package fr.ehpad.dao;
 import java.sql.Connection;
-import ehpad.database.Database;
-import ehpad.entity.Prescription;
-
-import java.sql.DriverManager;
+import fr.ehpad.entity.Prescription;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 public class PrescriptionDAO {
 
@@ -46,5 +42,7 @@ public class PrescriptionDAO {
 			int i = res2.getInt("id");
 			System.out.println(n);
 		}
+            return null;
+                
 	}
 }
