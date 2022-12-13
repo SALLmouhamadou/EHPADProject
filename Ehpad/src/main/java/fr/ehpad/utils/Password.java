@@ -1,4 +1,4 @@
-package ehpad.utils;
+package fr.ehpad.utils;
 
 import org.apache.commons.codec.digest.DigestUtils;
 

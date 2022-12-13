@@ -1,4 +1,4 @@
-package ehpad.uml;
+package fr.ehpad.uml;
 
 public class PlantUML {
 	/**

@@ -1,7 +1,8 @@
-package ehpad.dao;
+package fr.ehpad.dao;
 
 import java.sql.Connection;
 import ehpad.database.Database;
+import ehpad.entity.Pensionnaire;
 import ehpad.entity.Prescription;
 
 import java.sql.DriverManager;
@@ -15,12 +16,14 @@ public class PrescriptionDAO {
 	public Prescription getPrescriptionbyID(Integer idPensionnaire) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
+		Prescription pres = new Prescription();
 		String sql = "SELECT * FROM prescription WHERE id_pensionnaire=?;";
 		PreparedStatement state = con.prepareCall(sql);
 		state.setInt(1, idPensionnaire);
 		ResultSet res = state.executeQuery();
 		res.next();
 		while (res.next()) {
+			Prescription.set
 			String sql2 = "SELECT * FROM medicament WHERE id_medicament=?;";
 			String medicament = res.getString("id_medicament");
 			int medicamentInt = Integer.parseInt(medicament);
