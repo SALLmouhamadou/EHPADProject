@@ -1,6 +1,7 @@
 package fr.ehpad.entity;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  *
@@ -118,4 +119,47 @@ public class Personne {
     public void setDateDepart(LocalDate dateDepart) {
         this.dateDepart = dateDepart;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 37 * hash + Objects.hashCode(this.nom);
+        hash = 37 * hash + Objects.hashCode(this.prenom);
+        hash = 37 * hash + Objects.hashCode(this.email);
+        hash = 37 * hash + Objects.hashCode(this.pwd);
+        hash = 37 * hash + Objects.hashCode(this.telephone);
+        hash = 37 * hash + Objects.hashCode(this.dateNaissance);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Personne other = (Personne) obj;
+        if (!Objects.equals(this.nom, other.nom)) {
+            return false;
+        }
+        if (!Objects.equals(this.prenom, other.prenom)) {
+            return false;
+        }
+        if (!Objects.equals(this.email, other.email)) {
+            return false;
+        }
+        if (!Objects.equals(this.pwd, other.pwd)) {
+            return false;
+        }
+        if (!Objects.equals(this.telephone, other.telephone)) {
+            return false;
+        }
+        return Objects.equals(this.dateNaissance, other.dateNaissance);
+    }
+    
 }

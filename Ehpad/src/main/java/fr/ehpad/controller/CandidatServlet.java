@@ -27,6 +27,7 @@ public class CandidatServlet extends HttpServlet {
 
 
     private final static String VUE = "/WEB-INF/candidat.jsp";
+    private final static String VUEOK="/WEB-INF/confirmation.jsp";    
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -78,7 +79,7 @@ public class CandidatServlet extends HttpServlet {
                 Personne candidat = new Personne(nom, prenom, email, password, telephone, dateNaissance);
                 CandidatDao.insert(candidat);
                  request.setAttribute("candidatMessage", "votre demande a bien été transmis");
-                getServletContext().getRequestDispatcher(VUE).forward(request, response);
+                getServletContext().getRequestDispatcher(VUEOK).forward(request, response);
             } catch (SQLException ex) {
                 Logger.getLogger(CandidatServlet.class.getName()).log(Level.SEVERE, null, ex);
             }

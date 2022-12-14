@@ -49,3 +49,12 @@ button{
     color:aliceblue;
     border:none;
 }
+
+/* ================= candidat.jsp=============*/
+.container_candidat{
+    display: flex;
+    justify-content: center;
+}
+.form{
+    
+}

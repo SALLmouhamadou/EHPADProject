@@ -1,15 +1,11 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Candidat</title>
-    </head>
-    <body>
+<%@taglib prefix="p" tagdir="/WEB-INF/tags" %>
+<p:header title="Ehpad"/>
+<div class="container_candidat">
         <h3> Veuillez remplir ce formulaire</h3>
 
-        <form action="candidat" method="post">
+        <form action="candidat" method="post" class="form">
             <div>
                 <label for="nom"> Nom </label><br>
                 <input type="text" name="nom" placeholder="Entrez votre nom" required>
@@ -63,5 +59,4 @@
                 <div class="erreur">${candidatMessage}</div>
             </c:if>
         </form>
-    </body>
-</html>
+   </div>
