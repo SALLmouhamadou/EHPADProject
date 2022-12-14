@@ -11,12 +11,12 @@ import java.time.LocalDate;
 
 public class PrescriptionDao {
 
-	public static Prescription getPrescriptionbyID(Integer idPensionnaire) throws SQLException {
+	public static Prescription getPrescriptionbyID(Integer idPersonne) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM prescription WHERE id_pensionnaire=?;";
 		PreparedStatement state = con.prepareCall(sql);
-		state.setInt(1, idPensionnaire);
+		state.setInt(1, idPersonne);
 		ResultSet res = state.executeQuery();
 		res.next();
 		Integer idMedicament = res.getInt("id_medicament");
