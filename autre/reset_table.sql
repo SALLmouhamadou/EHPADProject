@@ -76,7 +76,10 @@ BEGIN
 		VALUES (1, 98765432109, CURDATE());
 
 		INSERT INTO prescription(id_medicament, id_personne, no_rpps, jour, posologie, date_debut_traitement, date_fin_traitement)
-		VALUES (1, 1, 98765432109, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
+		VALUES (1, 1, 98765432109, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14'),
+        (1, 1, 98765432109, CURDATE(), "- Spasfon : 1 dose par repas", '2022-12-24', '2023-07-14'),
+        (1, 1, 98765432109, CURDATE(), "- Vomitax : 50ml 3 fois par jour", '2022-12-10', '2022-12-13'),
+        (1, 1, 98765432109, CURDATE(), "- Recurvite : 1 lavement toute les 3 heures", '2022-12-10', '2023-07-14');
 
 		INSERT INTO allergene(nom)
 		VALUES ("gluten"),

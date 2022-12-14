@@ -114,6 +114,20 @@ CREATE TABLE ordonnance(
    FOREIGN KEY(id_personne) REFERENCES pensionnaire(id_personne)
 )ENGINE INNODB;
 
+CREATE TABLE prescription(
+   no_rpps VARCHAR(11) ,
+   id_personne INT,
+   jour DATE,
+   id_medicament INT,
+   id_prescription INT AUTO_INCREMENT,
+   posologie VARCHAR(50)  NOT NULL,
+   date_debut_traitement DATE NOT NULL,
+   date_fin_traitement DATE NOT NULL,
+   PRIMARY KEY(id_prescription),
+   FOREIGN KEY(no_rpps, id_personne, jour) REFERENCES ordonnance(no_rpps, id_personne, jour),
+   FOREIGN KEY(id_medicament) REFERENCES medicament(id_medicament)
+) ENGINE INNODB;
+
 CREATE TABLE demande_une_admission(
    id_personne INT,
    jour DATE,
@@ -138,7 +152,6 @@ CREATE TABLE administre_medicament(
 CREATE TABLE repas_plat(
    id_repas INT,
    id_plat INT,
-   rang TINYINT NOT NULL,
    PRIMARY KEY(id_repas, id_plat),
    FOREIGN KEY(id_repas) REFERENCES repas(id_repas),
    FOREIGN KEY(id_plat) REFERENCES plat(id_plat)
@@ -168,20 +181,6 @@ CREATE TABLE sensibilite_allergene(
    FOREIGN KEY(id_personne) REFERENCES pensionnaire(id_personne),
    FOREIGN KEY(id_allergene) REFERENCES allergene(id_allergene)
 )ENGINE INNODB;
-
-CREATE TABLE prescription(
-   id_medicament INT,
-   no_rpps VARCHAR(11) ,
-   id_personne INT,
-   jour DATE,
-   posologie VARCHAR(50)  NOT NULL,
-   date_debut_traitement DATE NOT NULL,
-   date_fin_traitement DATE NOT NULL,
-   PRIMARY KEY(id_medicament, no_rpps, id_personne, jour),
-   FOREIGN KEY(id_medicament) REFERENCES medicament(id_medicament),
-   FOREIGN KEY(no_rpps, id_personne, jour) REFERENCES ordonnance(no_rpps, id_personne, jour)
-)ENGINE INNODB;
-
 
 
 -- DEBUT DES VALEURS DE TEST
@@ -244,7 +243,10 @@ INSERT INTO personne(id_personne, nom, prenom, date_naissance, date_arrivee, ema
 		VALUES (1, 98765432109, CURDATE());
 
 		INSERT INTO prescription(id_medicament, id_personne, no_rpps, jour, posologie, date_debut_traitement, date_fin_traitement)
-		VALUES (1, 1, 98765432109, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14');
+		VALUES (1, 1, 98765432109, CURDATE(), "- Paracétamol 1000mg : 3 comprimés par jour", curdate(), '2023-07-14'),
+        (1, 1, 98765432109, CURDATE(), "- Spasfon : 1 dose par repas", '2022-12-24', '2023-07-14'),
+        (1, 1, 98765432109, CURDATE(), "- Vomitax : 50ml 3 fois par jour", '2022-12-10', '2022-12-13'),
+        (1, 1, 98765432109, CURDATE(), "- Recurvite : 1 lavement toute les 3 heures", '2022-12-10', '2023-07-14');
 
 		INSERT INTO allergene(nom)
 		VALUES ("gluten"),
