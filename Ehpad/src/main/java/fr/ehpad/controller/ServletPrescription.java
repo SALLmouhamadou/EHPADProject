@@ -44,16 +44,16 @@ public class ServletPrescription extends HttpServlet {
 		System.out.println(nom + " " + prenom);
 		
 		try {
-			Personne pers = PersonneDao.getPersonnebyPatronyme(nom, prenom);
+			Personne pers = PersonneDao.getByPatronyme(nom, prenom);
 			 // traitement
-		    HashMap<Integer, Prescription> pres = PrescriptionDao.getPrescriptionbyID(pers.getIdPersonne());
+		    HashMap<Integer, Prescription> pres = PrescriptionDao.getByID(pers.getIdPersonne());
 		    Set<Integer> lesClefs = pres.keySet();
 		    HashMap<Integer, Medicament> lesMedocs = new HashMap<>();
 		    int index = 0;
 		    
 		    for (Integer unePres : lesClefs) {
 		    	Prescription pre = pres.get(unePres);
-		    	Medicament medic = MedicamentDao.getMedicamentbyID(pre.getIdMedicament());
+		    	Medicament medic = MedicamentDao.getByID(pre.getIdMedicament());
 		    	lesMedocs.put(index, medic);
 		    	index++;
 		    	// sauver n sur la session

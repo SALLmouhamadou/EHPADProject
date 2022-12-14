@@ -12,7 +12,7 @@ import java.util.HashMap;
 
 public class PrescriptionDao {
 
-	public static HashMap<Integer, Prescription> getPrescriptionbyID(Integer idPersonne) throws SQLException {
+	public static HashMap<Integer, Prescription> getByID(Integer idPersonne) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
 		String sql = "SELECT * \r\n"

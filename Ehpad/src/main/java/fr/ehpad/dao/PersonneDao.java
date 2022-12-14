@@ -12,7 +12,7 @@ import java.sql.Statement;
 import java.time.LocalDate;
 
 public class PersonneDao {
-	public static Personne getPersonnebyID(Integer idPersonne) throws SQLException {
+	public static Personne getByID(Integer idPersonne) throws SQLException {
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM personne WHERE id_personne=?;";
 		PreparedStatement state = con.prepareCall(sql);
@@ -33,7 +33,7 @@ public class PersonneDao {
 		return pers;
 	}
 	
-	public static Personne getPersonnebyPatronyme(String nom, String prenom) throws SQLException {
+	public static Personne getByPatronyme(String nom, String prenom) throws SQLException {
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM personne WHERE nom=? AND prenom=?;";
 		PreparedStatement state = con.prepareCall(sql);

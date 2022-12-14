@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.time.LocalDate;
 
 public class MedicamentDao {
-	public static Medicament getMedicamentbyID(Integer idMedic) throws SQLException {
+	public static Medicament getByID(Integer idMedic) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM medicament WHERE id_medicament =?;";
@@ -29,7 +29,7 @@ public class MedicamentDao {
 		return medic;
 	}
 	
-	public static Medicament getMedicamentbyNom(String nom) throws SQLException {
+	public static Medicament getByNom(String nom) throws SQLException {
 		// ouvrir un canal de requettage.
 		Connection con = Database.getConnection();
 		String sql = "SELECT * FROM medicament WHERE nom=?;";
