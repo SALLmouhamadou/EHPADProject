@@ -48,4 +48,12 @@ public class Medicament {
 		this.id_medicament = id_medicament;
 	}
 
+	@Override
+	public String toString() {
+		return "Medicament [nom=" + nom + ", fonction=" + fonction + ", stock=" + stock + ", id_medicament="
+				+ id_medicament + "]";
+	}
+	
+	
+
 }

@@ -1,12 +1,23 @@
 package fr.ehpad.controller;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Set;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import fr.ehpad.dao.MedicamentDao;
+import fr.ehpad.dao.PersonneDao;
+import fr.ehpad.dao.PrescriptionDao;
+import fr.ehpad.entity.Medicament;
+import fr.ehpad.entity.Personne;
+import fr.ehpad.entity.Prescription;
 
 /**
  * Servlet implementation class ServletPrescription
@@ -32,19 +43,35 @@ public class ServletPrescription extends HttpServlet {
 		
 		System.out.println(nom + " " + prenom);
 		
-		// ca = new Article(nom, prix, quantite);
-	    
-	    // sauver n sur la session
-	    HttpSession maSession = request.getSession();
-	    //Panier panier = (Panier) maSession.getAttribute("Panier");
-	    //Login particulier = (Login) maSession.getAttribute("Login");
-	    //System.out.println("Nombre d'articles : " + panier.getNombreArticle());
-	    //maSession.setAttribute("Panier", panier);  // créer la variable dnas le tab de session
-	    
-	    // traitement
-	    
+		try {
+			Personne pers = PersonneDao.getPersonnebyPatronyme(nom, prenom);
+			 // traitement
+		    HashMap<Integer, Prescription> pres = PrescriptionDao.getPrescriptionbyID(pers.getIdPersonne());
+		    Set<Integer> lesClefs = pres.keySet();
+		    HashMap<Integer, Medicament> lesMedocs = new HashMap<>();
+		    int index = 0;
+		    
+		    for (Integer unePres : lesClefs) {
+		    	Prescription pre = pres.get(unePres);
+		    	Medicament medic = MedicamentDao.getMedicamentbyID(pre.getIdMedicament());
+		    	lesMedocs.put(index, medic);
+		    	index++;
+		    	// sauver n sur la session
+		    }
+		    HttpSession maSession = request.getSession();
+		    System.out.println("Nombre de prescriptions : " + pres.size());
+		    
+		    maSession.setAttribute("nom", pers.getNom());
+		    maSession.setAttribute("prenom", pers.getPrenom());
+		    maSession.setAttribute("medicaments", lesMedocs);
+		    maSession.setAttribute("prescriptions", pres);
+		    
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 	    // fin aller vers une page
-	    getServletContext().getRequestDispatcher("/Article.html").forward(request, response);
+	    getServletContext().getRequestDispatcher("/prescriptions.jsp").forward(request, response);
 		
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
