@@ -97,27 +97,27 @@ public class Personne {
 		this.telephone = telephone;
 	}
 
-	public Date getDateNaissance() {
+	public LocalDate getDateNaissance() {
 		return dateNaissance;
 	}
 
-	public void setDateNaissance(Date dateNaissance) {
+	public void setDateNaissance(LocalDate dateNaissance) {
 		this.dateNaissance = dateNaissance;
 	}
 
-	public Date getDateArrivee() {
+	public LocalDate getDateArrivee() {
 		return dateArrivee;
 	}
 
-	public void setDateArrivee(Date dateArrivee) {
+	public void setDateArrivee(LocalDate dateArrivee) {
 		this.dateArrivee = dateArrivee;
 	}
 
-	public Date getDateDepart() {
+	public LocalDate getDateDepart() {
 		return dateDepart;
 	}
 
-	public void setDateDepart(Date dateDepart) {
+	public void setDateDepart(LocalDate dateDepart) {
 		this.dateDepart = dateDepart;
 	}
 	

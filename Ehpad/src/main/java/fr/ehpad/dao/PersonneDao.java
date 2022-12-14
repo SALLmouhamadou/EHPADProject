@@ -2,7 +2,6 @@ package fr.ehpad.dao;
 
 import java.sql.Connection;
 
-import ehpad.entity.Pensionnaire;
 import fr.ehpad.entity.Personne;
 
 import java.sql.DriverManager;
