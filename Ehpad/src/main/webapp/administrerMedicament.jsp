@@ -10,7 +10,7 @@
         <h3>Administration d'un médicament</h3>
 		
         <div>
-<form action="candidat" method="post">
+<form action="administrerMedicament" method="post">
             <div>
                 <label for="nom"> Nom du patient </label><br>
                 <input type="text" name="nom" placeholder="Entrez votre nom" required>
@@ -30,8 +30,8 @@
                 <input type="Submit" value="Valider">
                 <input type="reset"  value="Reset">
             </div>
-            <c:if test="${candidatMessage != null}">
-                <div class="erreur">${candidatMessage}</div>
+            <c:if test="${resultMessage != null}">
+                <div class="resultat">${result}</div>
             </c:if>
         </form>        
         </div>

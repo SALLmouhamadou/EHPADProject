@@ -4,11 +4,9 @@ import java.sql.Connection;
 
 import fr.ehpad.entity.Personne;
 
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.time.LocalDate;
 
 public class PersonneDao {
