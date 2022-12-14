@@ -21,7 +21,6 @@ public class PrescriptionDao {
 		res.next();
 		Integer idMedicament = res.getInt("id_medicament");
 		String noRPPS = res.getString("no_rpps");
-		Integer idPersonne = res.getInt("id_personne");
 		LocalDate jour = LocalDate.parse(res.getString("jour"));
 		String posologie = res.getString("posologie");
 		LocalDate dateDebutTraitement = LocalDate.parse(res.getString("date_debut_traitement"));
