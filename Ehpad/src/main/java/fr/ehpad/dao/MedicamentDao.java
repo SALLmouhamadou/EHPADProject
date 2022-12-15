@@ -1,5 +1,8 @@
 package fr.ehpad.dao;
 
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.sql.Connection;
 
 import fr.ehpad.entity.Medicament;
@@ -9,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
+
+import org.junit.jupiter.api.Test;
 
 public class MedicamentDao {
 	public static Medicament getByID(Integer idMedic) throws SQLException {
@@ -45,5 +50,18 @@ public class MedicamentDao {
 		Medicament medic = new Medicament(idMedicament, nomMedicament, fonction, stock);
 
 		return medic;
+	}
+	
+	@Test
+    public void testConnection() {
+		try {
+			assertNotNull(Database.getConnection());
+			Medicament medic = this.getByID(1);
+			assertNotNull(medic);
+			assertTrue(medic.getId_medicament() == 1);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }
