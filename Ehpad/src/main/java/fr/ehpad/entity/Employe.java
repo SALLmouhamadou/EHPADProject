@@ -4,8 +4,6 @@ public class Employe extends Personne {
 	private Integer id_employe, id_fonction;
 	private String no_secu;
 	
-	
-
 	public Employe() {
 		super();
 	}

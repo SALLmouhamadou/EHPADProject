@@ -3,8 +3,8 @@ package fr.ehpad.entity;
 public class Medicament {
 	private String nom, fonction;
 	private Integer stock, id_medicament;
-	
-	public Medicament(String nom, String fonction, Integer stock, Integer id_medicament) {
+
+	public Medicament(Integer id_medicament, String nom, String fonction, Integer stock) {
 		super();
 		this.nom = nom;
 		this.fonction = fonction;
@@ -47,6 +47,13 @@ public class Medicament {
 	public void setId_medicament(Integer id_medicament) {
 		this.id_medicament = id_medicament;
 	}
+
+	@Override
+	public String toString() {
+		return "Medicament [nom=" + nom + ", fonction=" + fonction + ", stock=" + stock + ", id_medicament="
+				+ id_medicament + "]";
+	}
 	
 	
+
 }
