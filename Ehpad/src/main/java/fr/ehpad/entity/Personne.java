@@ -14,7 +14,9 @@ public class Personne {
     private LocalDate dateNaissance, dateArrivee, dateDepart;
 
     public Personne() {
+    	
     }
+    
     public Personne(String commentaire){
         this.commentaire=commentaire;
     }
@@ -33,6 +35,7 @@ public class Personne {
 		this.dateArrivee = dateArrivee;
 		this.dateDepart = dateDepart;
 	}
+    
 	public Personne(int idPersonne, String nom, String prenom, String email, String telephone, LocalDate dateNaissance,
             LocalDate dateArrivee, LocalDate dateDepart) {
         super();

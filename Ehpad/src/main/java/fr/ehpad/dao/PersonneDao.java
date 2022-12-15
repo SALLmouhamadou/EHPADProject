@@ -28,7 +28,8 @@ public class PersonneDao {
 		LocalDate dateArrivee = LocalDate.parse(res.getString("date_arrivee"));
 		LocalDate dateDepart = LocalDate.parse(res.getString("date_depart"));
 		
-		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone, commentaire, dateNaissance, dateArrivee, dateDepart);
+		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone,
+				commentaire, dateNaissance, dateArrivee, dateDepart);
 		return pers;
 	}
 	
@@ -50,7 +51,8 @@ public class PersonneDao {
 		LocalDate dateArrivee = LocalDate.parse(res.getString("date_arrivee"));
 		LocalDate dateDepart = LocalDate.parse(res.getString("date_depart"));
 		
-		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone, commentaire, dateNaissance, dateArrivee, dateDepart);
+		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone,
+				commentaire, dateNaissance, dateArrivee, dateDepart);
 		return pers;
 	}
 }
