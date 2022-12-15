@@ -10,12 +10,14 @@ import java.util.Objects;
 public class Personne {
 
     private int idPersonne;
-    private String nom, prenom, email, pwd, telephone;
+    private String nom, prenom, email, pwd, telephone, commentaire;
     private LocalDate dateNaissance, dateArrivee, dateDepart;
 
     public Personne() {
     }
-
+    public Personne(String commentaire){
+        this.commentaire=commentaire;
+    }
     public Personne(int idPersonne, String nom, String prenom, String email, String telephone, LocalDate dateNaissance,
             LocalDate dateArrivee, LocalDate dateDepart) {
         super();
@@ -104,6 +106,14 @@ public class Personne {
         this.dateNaissance = dateNaissance;
     }
 
+    public String getCommentaire() {
+        return commentaire;
+    }
+
+    public void setCommentaire(String commentaire) {
+        this.commentaire = commentaire;
+    }
+
     public LocalDate getDateArrivee() {
         return dateArrivee;
     }
@@ -129,6 +139,7 @@ public class Personne {
         hash = 37 * hash + Objects.hashCode(this.pwd);
         hash = 37 * hash + Objects.hashCode(this.telephone);
         hash = 37 * hash + Objects.hashCode(this.dateNaissance);
+        hash = 37 * hash + Objects.hashCode(this.commentaire);
         return hash;
     }
 
@@ -159,6 +170,10 @@ public class Personne {
         if (!Objects.equals(this.telephone, other.telephone)) {
             return false;
         }
+        if (!Objects.equals(this.commentaire, other.commentaire)) {
+            return false;
+        }
+        
         return Objects.equals(this.dateNaissance, other.dateNaissance);
     }
     

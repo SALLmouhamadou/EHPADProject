@@ -23,4 +23,12 @@ public class CandidatDao {
         stmt.executeUpdate();
         connexion.close();
     }
+    
+//    public static void insertAdmission(Personne admis) throws SQLException{
+//        Connection connexion = Database.getConnection();
+//        String  sql ="INSERT INTO statut_candidature(jour, commentaire) VALUES(?, ?)";
+//        PreparedStatement stmt = connexion.prepareCall(sql);
+//        stmt.setDate(3, Date.valueOf("'now()'"));
+//        stmt.setString(2, admis.getCommentaire());
+//    }
 }
