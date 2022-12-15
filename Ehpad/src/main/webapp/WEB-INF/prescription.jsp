@@ -1,17 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Prescription</title>
-</head>
-<body>
-	<h1>Prescription du patient ${nom} ${prenom}</h1>
-	
-	<div>
-	
-	</div>
-</body>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Prescription</title>
+    </head>
+    <body>
+        <h3>Prescription pour ${nom} ${prenom}</h3>
+
+        <div>
+        
+        </div>
+    </body>
 </html>
