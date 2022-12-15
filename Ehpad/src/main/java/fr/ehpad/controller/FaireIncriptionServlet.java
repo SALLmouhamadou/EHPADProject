@@ -2,7 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
+
+
+
 package fr.ehpad.controller;
+
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -16,17 +20,16 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author SALL Mouhamadou
  */
-@WebServlet(name = "VerifOuiServlet", urlPatterns = {"/verifOui"})
-public class VerifOuiServlet extends HttpServlet {
+@WebServlet(name = "FaireInscriptionServelt", urlPatterns = {"/faireInscription"})
+public class FaireIncriptionServlet extends HttpServlet {
 
-   
-
-   
+    private final static String VUE = "/WEB-INF/inscription.jsp";
+    
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/admission.jsp").forward(request, response);
+        getServletContext().getRequestDispatcher(VUE).forward(request, response);
     }
 
-   
+  
 }

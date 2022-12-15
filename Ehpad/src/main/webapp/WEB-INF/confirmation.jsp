@@ -13,13 +13,6 @@
     </head>
     <body>
         <h1>Votre inscription est bien faite</h1>
-        <h2> Voulez-vous faire une demande admission
-        <form action="verifNon" method="post">
-            <button type="submit">Non</button>
-        </form><br>
-        <form action="verifOui" method="post">
-            <button type="submit">Oui</button>
-        </form>
         <h3>${admissionMessage}</h3>
     </body>
 </html>

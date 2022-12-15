@@ -4,7 +4,8 @@
  */
 package fr.ehpad.controller;
 
-import fr.ehpad.dao.CandidatDao;
+
+import fr.ehpad.dao.PersonneDao;
 import fr.ehpad.entity.Personne;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -22,11 +23,11 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author SALL Mouhamadou
  */
-@WebServlet(name = "CandidatServelt", urlPatterns = {"/candidat"})
-public class CandidatServlet extends HttpServlet {
+@WebServlet(name = "InscriptionServelt", urlPatterns = {"/inscription"})
+public class InscriptionServlet extends HttpServlet {
 
 
-    private final static String VUE = "/WEB-INF/candidat.jsp";
+    private final static String VUE = "/WEB-INF/inscription.jsp";
     private final static String VUEOK="/WEB-INF/confirmation.jsp";    
 
     @Override
@@ -76,12 +77,12 @@ public class CandidatServlet extends HttpServlet {
         if (isValid) {
             
             try {
-                Personne candidat = new Personne(nom, prenom, email, password, telephone, dateNaissance);
-                CandidatDao.insert(candidat);
+                Personne user = new Personne(nom, prenom, email, password, telephone, dateNaissance);
+                PersonneDao.insert(user);
                  request.setAttribute("candidatMessage", "votre demande a bien été transmis");
                 getServletContext().getRequestDispatcher(VUEOK).forward(request, response);
             } catch (SQLException ex) {
-                Logger.getLogger(CandidatServlet.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(InscriptionServlet.class.getName()).log(Level.SEVERE, null, ex);
             }
                
         } else {
