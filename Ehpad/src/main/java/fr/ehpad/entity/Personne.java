@@ -147,52 +147,29 @@ public class Personne {
     public void setDateDepart(LocalDate dateDepart) {
         this.dateDepart = dateDepart;
     }
+    
+    
 
     @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 37 * hash + Objects.hashCode(this.nom);
-        hash = 37 * hash + Objects.hashCode(this.prenom);
-        hash = 37 * hash + Objects.hashCode(this.email);
-        hash = 37 * hash + Objects.hashCode(this.pwd);
-        hash = 37 * hash + Objects.hashCode(this.telephone);
-        hash = 37 * hash + Objects.hashCode(this.dateNaissance);
-        hash = 37 * hash + Objects.hashCode(this.commentaire);
-        return hash;
-    }
+	public int hashCode() {
+		return Objects.hash(commentaire, dateArrivee, dateDepart, dateNaissance, email, idPersonne, nom, prenom, pwd,
+				telephone);
+	}
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Personne other = (Personne) obj;
-        if (!Objects.equals(this.nom, other.nom)) {
-            return false;
-        }
-        if (!Objects.equals(this.prenom, other.prenom)) {
-            return false;
-        }
-        if (!Objects.equals(this.email, other.email)) {
-            return false;
-        }
-        if (!Objects.equals(this.pwd, other.pwd)) {
-            return false;
-        }
-        if (!Objects.equals(this.telephone, other.telephone)) {
-            return false;
-        }
-        if (!Objects.equals(this.commentaire, other.commentaire)) {
-            return false;
-        }
-        
-        return Objects.equals(this.dateNaissance, other.dateNaissance);
-    }
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Personne other = (Personne) obj;
+		return Objects.equals(commentaire, other.commentaire) && Objects.equals(dateArrivee, other.dateArrivee)
+				&& Objects.equals(dateDepart, other.dateDepart) && Objects.equals(dateNaissance, other.dateNaissance)
+				&& Objects.equals(email, other.email) && idPersonne == other.idPersonne
+				&& Objects.equals(nom, other.nom) && Objects.equals(prenom, other.prenom)
+				&& Objects.equals(pwd, other.pwd) && Objects.equals(telephone, other.telephone);
+	}
     
 }
