@@ -1,8 +1,7 @@
 package fr.ehpad.entity;
 
 import java.time.LocalDate;
-
-import com.google.common.base.Objects;
+import java.util.Objects;
 
 /**
  *
@@ -156,26 +155,26 @@ public class Personne {
             return false;
         }
         final Personne other = (Personne) obj;
-        if (!Objects.equal(this.nom, other.nom)) {
+        if (!Objects.equals(this.nom, other.nom)) {
             return false;
         }
-        if (!Objects.equal(this.prenom, other.prenom)) {
+        if (!Objects.equals(this.prenom, other.prenom)) {
             return false;
         }
-        if (!Objects.equal(this.email, other.email)) {
+        if (!Objects.equals(this.email, other.email)) {
             return false;
         }
-        if (!Objects.equal(this.pwd, other.pwd)) {
+        if (!Objects.equals(this.pwd, other.pwd)) {
             return false;
         }
-        if (!Objects.equal(this.telephone, other.telephone)) {
+        if (!Objects.equals(this.telephone, other.telephone)) {
             return false;
         }
-        if (!Objects.equal(this.commentaire, other.commentaire)) {
+        if (!Objects.equals(this.commentaire, other.commentaire)) {
             return false;
         }
         
-        return Objects.equal(this.dateNaissance, other.dateNaissance);
+        return Objects.equals(this.dateNaissance, other.dateNaissance);
     }
     
 }
