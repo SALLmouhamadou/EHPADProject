@@ -23,11 +23,12 @@ public class PersonneDao {
 		String telephone = res.getString("telephone");
 		String email = res.getString("email");
 		String pwd = res.getString("pwd");
+		String commentaire = res.getString("commentaire");
 		LocalDate dateNaissance = LocalDate.parse(res.getString("date_naissance"));
 		LocalDate dateArrivee = LocalDate.parse(res.getString("date_arrivee"));
 		LocalDate dateDepart = LocalDate.parse(res.getString("date_depart"));
 		
-		Personne pers = new Personne(idPersonne, nom, prenom, telephone, email, pwd, dateNaissance, dateArrivee, dateDepart);
+		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone, commentaire, dateNaissance, dateArrivee, dateDepart);
 		return pers;
 	}
 	
@@ -44,11 +45,12 @@ public class PersonneDao {
 		String telephone = res.getString("telephone");
 		String email = res.getString("email");
 		String pwd = res.getString("pwd");
+		String commentaire = res.getString("commentaire");
 		LocalDate dateNaissance = LocalDate.parse(res.getString("date_naissance"));
 		LocalDate dateArrivee = LocalDate.parse(res.getString("date_arrivee"));
 		LocalDate dateDepart = LocalDate.parse(res.getString("date_depart"));
 		
-		Personne pers = new Personne(idPersonne, nom, prenom, telephone, email, pwd, dateNaissance, dateArrivee, dateDepart);
+		Personne pers = new Personne(idPersonne, nom, prenom, email, pwd, telephone, commentaire, dateNaissance, dateArrivee, dateDepart);
 		return pers;
 	}
 }

@@ -18,7 +18,22 @@ public class Personne {
     public Personne(String commentaire){
         this.commentaire=commentaire;
     }
-    public Personne(int idPersonne, String nom, String prenom, String email, String telephone, LocalDate dateNaissance,
+    
+    public Personne(int idPersonne, String nom, String prenom, String email, String pwd, String telephone,
+			String commentaire, LocalDate dateNaissance, LocalDate dateArrivee, LocalDate dateDepart) {
+		super();
+		this.idPersonne = idPersonne;
+		this.nom = nom;
+		this.prenom = prenom;
+		this.email = email;
+		this.pwd = pwd;
+		this.telephone = telephone;
+		this.commentaire = commentaire;
+		this.dateNaissance = dateNaissance;
+		this.dateArrivee = dateArrivee;
+		this.dateDepart = dateDepart;
+	}
+	public Personne(int idPersonne, String nom, String prenom, String email, String telephone, LocalDate dateNaissance,
             LocalDate dateArrivee, LocalDate dateDepart) {
         super();
         this.idPersonne = idPersonne;
