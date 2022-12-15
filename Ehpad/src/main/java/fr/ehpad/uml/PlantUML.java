@@ -24,13 +24,13 @@ public class PlantUML {
 	 * participant Navigateur 
 	 * participant Vue
 	 * 
-	 *           Navigateur -> Controleur: /administration_medicament\n+parametres 
+	 *           Navigateur -> Controleur: /administrerMedicament\n+parametres 
 	 *           Controleur -> Dao: EHPAD.getPensionnaires()
 	 *           Controleur -> Dao: EHPAD.getOrdonnances()
-	 *           Dao -> SGBD: SQL SELECT id_pensionnaire, id_medicament, posologie, jour\n FROM prescription\n GROUP BY id_pensionnaire\nWHERE date_fin_traitement<NOW()
-	 *           SGBD --> Dao: id_pensionnaire, id_medicament, posologie, jour
-	 *           Dao --> Controleur: new Ordonnance
-	 *           Controleur -> Vue: ordonnances.jsp 
+	 *           Dao -> SGBD: SQL
+	 *           SGBD --> Dao: lignes
+	 *           Dao --> Controleur: Vérifie que les lignes ont été insérées
+	 *           Controleur -> Vue: administrerMedicament
 	 *           Vue --> Navigateur: HTML genere
 	 * @enduml
 	 */
